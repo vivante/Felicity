@@ -7,7 +7,7 @@
  */
 $errors = [];
 $missing = [];
-if (isset($_POST['send'])) {
+if (isset($_POST['submit'])) {
     $expected = ['username', 'password'];
     $required = ['username', 'password'];
     require './includes/login_process.php';
@@ -19,7 +19,7 @@ if (isset($_POST['send'])) {
 <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400,400i,700" rel="stylesheet">
     <link rel="stylesheet"  type="text/css" href="./styles/login-style.css">
-    <!--<link href="styles/style.css" rel="stylesheet" type="text/css">-->
+    <link href="./styles/styles.css" rel="stylesheet" type="text/css">
 <title>Login</title>
 
 </head>
@@ -40,7 +40,7 @@ if (isset($_POST['send'])) {
         <p>
             <label for="username">Username
                 <?php if ($missing && in_array('username', $missing)) : ?>
-                    <span>Enter your username</span>
+                    <span class="warning">Enter your username</span>
                 <?php endif; ?>
             </label></p>
 
@@ -53,7 +53,7 @@ if (isset($_POST['send'])) {
         <p>
             <label for="password">Password
                 <?php if ($missing && in_array('password', $missing)) : ?>
-                    <span>Please enter your password</span>
+                    <span class="warning">Please enter your password</span>
                 <?php endif; ?>
             </label></p>
 
@@ -64,7 +64,7 @@ if (isset($_POST['send'])) {
             ?>>
 
         <input type="submit" name="submit" id="send" value="Login">
-        <a href="#"> Forget Password</a>
+        <a href="#"> Forgot Password</a>
     </form>
 </div>
 
