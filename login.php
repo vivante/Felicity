@@ -18,7 +18,7 @@ if (isset($_POST['send'])) {
 <head>
 <meta charset="UTF-8">
 <title>Preserving input</title>
-<link href="styles.css" rel="stylesheet" type="text/css">
+<link href="styles/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
