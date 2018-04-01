@@ -5,6 +5,6 @@
     <title>Hospital</title>
 </head>
 <body>
-
+<?php require './login.php' ?>
 </body>
 </html>
