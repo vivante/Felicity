@@ -2,7 +2,7 @@ body
 {
     text-decoration-color: red;
     font-size: 19px;
-    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(hospital.jpg)
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../media/hospital.jpg);
     
 }
 h1
