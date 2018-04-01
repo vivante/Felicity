@@ -57,7 +57,7 @@ if (isset($_POST['send'])) {
                 <?php endif; ?>
             </label></p>
 
-        <input type="text" name="password" placeholder="password" id="password"
+        <input type="password" name="password" placeholder="password" id="password"
             <?php if ($errors || $missing) {
                 echo 'value="' . htmlentities($password) . '"';
                 }
