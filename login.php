@@ -8,8 +8,8 @@
 $errors = [];
 $missing = [];
 if (isset($_POST['send'])) {
-    $expected = ['username', 'email'];
-    $required = ['username', 'email'];
+    $expected = ['username', 'password'];
+    $required = ['username', 'password'];
     require './includes/login_process.php';
 }
 ?>
@@ -17,35 +17,56 @@ if (isset($_POST['send'])) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Preserving input</title>
-<link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet"  type="text/css" href="./styles/login-style.css">
+    <!--<link href="styles/style.css" rel="stylesheet" type="text/css">-->
+<title>Login</title>
+
 </head>
 
 <body>
-<h1>HeartBeat Hospital</h1>
-<?php if ($errors || $missing) : ?>
-<p class="warning">Please enter the details</p>
-<?php endif; ?>
-<form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
-  <p>
-    <label for="name">Username:
-    <?php if ($missing && in_array('name', $missing)) : ?>
-        <span class="warning">Enter your username</span>
+
+<video autoplay muted loop id="MyVideo" >
+    <source src="./media/ear.mp4" type="video/mp4">
+</video>
+
+<div class="login-box">
+    <img src="./media/user3.png" class="user">
+    <h1>Login</h1>
+    <?php if ($errors || $missing) : ?>
+        <p>Please enter the details</p>
     <?php endif; ?>
-    </label>
-    <input type="text" name="name" id="name">
-  </p>
-  <p>
-    <label for="email">Email:
-        <?php if ($missing && in_array('email', $missing)) : ?>
-            <span class="warning">Please enter your email address</span>
-        <?php endif; ?>
-    </label>
-    <input type="email" name="email" id="email">
-  </p>
-  <p>
-    <input type="submit" name="send" id="send" value="Login">
-  </p>
-</form>
+    <form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
+        <p>
+            <label for="username">Username
+                <?php if ($missing && in_array('username', $missing)) : ?>
+                    <span>Enter your username</span>
+                <?php endif; ?>
+            </label></p>
+
+        <input type="text" name="username" placeholder="username" id="username"
+            <?php if ($errors || $missing) {
+                    echo 'value="' . htmlentities($username) . '"';
+                  }
+            ?>>
+
+        <p>
+            <label for="password">Password
+                <?php if ($missing && in_array('password', $missing)) : ?>
+                    <span>Please enter your password</span>
+                <?php endif; ?>
+            </label></p>
+
+        <input type="text" name="password" placeholder="password" id="password"
+            <?php if ($errors || $missing) {
+                echo 'value="' . htmlentities($password) . '"';
+                }
+            ?>>
+
+        <input type="submit" name="submit" id="send" value="Login">
+        <a href="#"> Forget Password</a>
+    </form>
+</div>
+
 </body>
 </html>
