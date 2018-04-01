@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400,400i,700" rel="stylesheet">
     <link rel="stylesheet"  type="text/css" href="./styles/login-style.css">
-    <link href="./styles/styles.css" rel="stylesheet" type="text/css">
+    <!--<link href="./styles/styles.css" rel="stylesheet" type="text/css">-->
 <title>Login</title>
 
 </head>
@@ -33,9 +33,9 @@ if (isset($_POST['submit'])) {
 <div class="login-box">
     <img src="./media/user3.png" class="user">
     <h1>Login</h1>
-    <?php if ($errors || $missing) : ?>
+    <?php /*if ($errors || $missing) : */?><!--
         <p>Please enter the details</p>
-    <?php endif; ?>
+    --><?php /*endif; */?>
     <form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
         <p>
             <label for="username">Username
@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
         <p>
             <label for="password">Password
                 <?php if ($missing && in_array('password', $missing)) : ?>
-                    <span class="warning">Please enter your password</span>
+                    <span class="warning">Enter your password</span>
                 <?php endif; ?>
             </label></p>
 
