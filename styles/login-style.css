@@ -90,3 +90,8 @@ h1{
 .login-box a:hover{
     color: #39dc79;
 }
+
+.warning {
+    font-weight: bold;
+    color: #ff0000;
+}
